@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,400;1,500&display=swap');
+
+.thePara h6, p {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: .5px;
+}
+
+.btn2 {
+
+    width: 300px;
+    border: 2px solid var(--grey);
+    color: var(--grey) !important;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    padding: 5px;
+    background-color: transparent;
+
+}
+
+
+.btn2:hover {
+    color: var(--white) !important;
+}
+
+.btn2::after {
+    z-index: -1;
+    content: "";
+    background: var(--grey);
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 0px;
+    top: 0;
+    border-radius: 13px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.btn2:hover::after {
+    width: 100%;
+}
+
+.header .btn2 {
+    margin-top: 20px;
+}
+
+
+.details .col-sm-5 h6{
+    font-size: 70px;
+    font-weight: 600;
+    margin: 20px auto;
+
+}
+
+.details .col-sm-5 p{
+    margin: 25px auto;
+}
+
+
+
+@media (max-width: 976px) {
+.details .col-sm-5 h6 {
+        font-size: 60px;
+
+    }
+    .j{
+        margin-right: 100px;
+    }
+}
+
+
+
+.bigImg {
+    max-width: 100%;
+    /* Set the maximum width of the image */
+    margin-top: 30px;
+
+    /* Maintain the aspect ratio */
+
+}
+
+
+@media (max-width: 760px) {
+
+
+.details .col-sm-5 h6 {
+        width: 100%;
+        font-size: 50px;
+        font-weight: 600;
+        margin: 20px auto;
+
+    }
+    .j {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .otherPara{
+        width: 100%;
+    }
+
+    .thePara {
+       width: 100%;
+       margin-left: 10px;
+    }
+
+
+}
+
+@media (max-width: 546px) {
+    .btn2{
+        width: 100%;
+    }
+
+
+}
+
+
+@media (max-width: 350px) {
+
+
+    .details .col-sm-5 h6 {
+        width: 100%;
+        font-size: 45px;
+        font-weight: 600;
+        margin: 20px auto;
+
+    }
+}
+
+

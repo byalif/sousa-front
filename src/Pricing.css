@@ -1,0 +1,161 @@
+
+.pricing{
+    margin-top: 40px;
+    margin-bottom: 200px;
+}
+
+.pricing .box:hover {
+    animation: shake 1.3s infinite ease both;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    75% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.solo{
+    margin-top: 220px;
+}
+
+.pricing .box{
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+box-shadow: 0 0 10px rgba(112, 112, 112, 0.4), 0 0 20px rgba(84, 84, 84, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.pricing .box:hover, .pricing .box.active{
+    margin-top: 20px;
+    background: black !important;
+    color: white !important;
+}
+
+.pricing .box h6{
+    font-size: 40px;
+    margin: 10px auto;
+    font-weight: 600;
+}
+.pricing .box h5 {
+    font-size: 100px;
+    margin: 20px auto;
+    font-weight: 600;
+}
+
+.pricing .box p {
+    font-size: 12px;
+    margin: 15px auto;
+    font-weight: 600;
+}
+
+.pricing .row{
+    margin-top: 100px auto;
+}
+
+
+
+.pricing .btn{
+    color: black !important;
+    border: 2px solid black;
+}
+
+.pricing .btn:hover {
+    color: rgb(0, 0, 0) !important;
+}
+.pricing .box:hover .btn{
+    color: rgb(255, 255, 255) !important;
+    border: 2px solid rgb(229, 229, 229) !important;
+}
+
+.pricing .box:hover .btn:hover {
+    color: rgb(0, 0, 0) !important;
+
+}
+
+
+@media (max-width: 767px) {
+.pricing .box {
+    margin: 40px auto;
+    }
+}
+
+.pricing-container {
+    max-width:40%;
+    padding: 20px;
+    margin: auto;
+    margin-top: -200px;
+
+}
+
+.pricing-box {
+    width: 100%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.pricing-box h6 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.pricing-box h5 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pricing-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.pricing-box button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pricing-box button:hover {
+    background-color: #0056b3;
+}
+
+.total-footer {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.total-footer h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.total-footer p {
+    font-size: 16px;
+    color: #666;
+}

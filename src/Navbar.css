@@ -1,0 +1,341 @@
+:root {
+    --main: #2c2c2c;
+    --black: #000;
+    --white: #fff;
+    --gradient-start: #1e1e1e; /* Slightly darker */
+    --gradient-middle:#0c0c0c;
+    --gradient-end: #1a1a1a;  /* Slightly darker */
+        /* Slightly darker than #1f1f1f */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    color: var(--white);
+    min-height: 155px;
+    /* Set a minimum height for the navbar */
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: white solid 1px;
+    left: 0;
+    width: 100%;
+    transition: top 0.3s ease;
+    /* Smooth transition for the navbar */
+    z-index: 1000;
+}
+
+.navbar.visible {
+    top: 0;
+    /* Keep the navbar at the top when visible */
+}
+
+.navbar.hidden {
+    top: -180px;
+    /* Hide the navbar by moving it off-screen */
+}
+
+
+.navbar-brand {
+    position: relative;
+    /* Make the brand text a positioning context */
+    z-index: 1;
+    /* Ensure brand text is above the image */
+    font-size: 28px;
+    /* Adjust the font size */
+    font-weight: bold;
+    /* Make the text bold */
+    text-decoration: none;
+    /* Remove underline */
+    color: var(--white);
+    /* Text color */
+    transition: transform 0.3s ease;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.navbar-brand span{
+    letter-spacing: -3px;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1); /* Scale up by 10% on hover */
+    color: var(--white);
+}
+
+
+
+
+
+
+a{
+    text-decoration: none;
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    z-index: 0;
+    /* Ensure the image is behind the brand text */
+    background-image: url('https://www.shareicon.net/download/128x128//2016/02/11/717631_weight_512x512.png');
+    /* Set background image */
+    background-size: cover;
+    /* Cover the entire background */
+    background-position: center;
+        /* Apply the shake animation */
+}
+
+.shake {
+    animation: shake 1s ease infinite alternate;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-2px);
+    }
+
+    25% {
+        transform: translateX(-2px);
+        /* Move left */
+    }
+
+    75% {
+        transform: translateX(2px);
+        /* Move right */
+    }
+
+    100% {
+        transform: translateX(2px);
+    }
+}
+
+@media (max-width: 868px) {
+    .image {
+        width: 28%;
+        /* Adjusted width for smaller screens */
+    }
+}
+
+@media (max-width: 620px) {
+    .image {
+        width: 34%;
+        /* Adjusted width for even smaller screens */
+    }
+}
+
+@media (max-width: 470px) {
+    .image {
+        width: 39%;
+        /* Adjusted width for even smaller screens */
+    }
+}
+
+@media (max-width: 423px) {
+    .image {
+        width: 42%;
+        /* Adjusted width for even smaller screens */
+    }
+}
+
+.navbar-nav {
+    list-style-type: none;
+    /* Remove bullet points from list */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    display: flex;
+    font-size: 18px;
+    flex-direction: row;
+}
+
+@media (max-width: 703px) {
+    .navbar-nav {
+        display: none;
+        /* Hide the navbar items */
+    }
+}
+
+.nav-item {
+    margin: 8px;
+    padding: 10px;
+    text-decoration: none;
+    /* Remove underline */
+    color: var(--white);
+    /* Text color */
+    position: relative;
+    /* Position context for pseudo-element */
+}
+
+.nav-item-admin {
+    margin: 8px;
+    padding: 10px;
+
+    text-decoration: none;
+    /* Remove underline */
+    color: var(--white);
+    /* Text color */
+    /* Position context for pseudo-element */
+}
+.nav-item::before,
+.nav-item::after {
+    content: '';
+    /* Add an empty content */
+    position: absolute;
+    bottom: 0;
+    /* Position at the bottom */
+    left: 0;
+    /* Start from left */
+    width: 0;
+    /* Initially zero width */
+    height: 2px;
+    /* Height of the underline */
+    background-color: var(--white);
+    /* Color of the underline */
+    transition: width 0.3s ease;
+    /* Transition for width change */
+}
+
+.nav-item::before {
+    right: 100%;
+    /* Start from the left */
+}
+
+.nav-item::after {
+    left: 100%;
+    /* Start from the right */
+}
+
+.nav-item:hover::before {
+    width: 100%;
+    /* Expand to full width on hover */
+}
+
+.nav-item:hover::after {
+    width: 0;
+    /* Shrink to zero width on hover */
+}
+
+.nav-item:hover{
+        color: var(--white);
+}
+
+.cart-icon {
+    margin-right: 20px; /* Adjust spacing between items */
+    position: relative; /* Position context for pseudo-element */
+    color: var(--white); /* Icon color */
+}
+
+.cart-icon:hover {
+    color: #629ddc; /* Change color on hover */
+}
+
+.cart-length {
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    top: 0;
+    right: -5px;
+    /* Adjust position as needed */
+    background-color: #627086;
+    /* Red color for cart length */
+    color: #fff;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 13px;
+    font-weight: bold;
+    z-index: -4;
+}
+
+
+.nav-item.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 130px;
+    z-index: 1;
+    right: 10px;
+    font-size: 17px;
+    top: 45px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 2px;
+    text-align: center;
+    animation: slideDown 0.5s ease;
+}
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    /* Add this line to remove underline */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn i {
+    margin-left: 5px;
+    /* Adjust the spacing between text and icon */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropbtn:hover {
+    text-decoration: none !important;
+}
+
+.dropdown-content a:not(:last-child) {
+    border-bottom: 1px solid black;
+}
+
+.dropdown-content a:hover {
+        color: black;
+    background-color: #e5e5e5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.admin-menu{
+    display: flex;
+}
+

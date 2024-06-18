@@ -1,0 +1,76 @@
+/* SignIn.css */
+.signin-container {
+    max-width: 400px;
+    margin: auto;
+    /* padding: 40px; */
+    background-color: #ffffff;
+    /* Light grey background */
+    color: #3b3b3b;
+    /* Dark grey text color */
+    /* border-radius: 5px; */
+    margin-top: 240px;
+    font-weight: lighter !important;
+        margin-bottom: 200px;
+    box-shadow: 0px 2px 10px 8px rgba(225, 225, 225, 0.4);
+}
+
+.signin-container h2 {
+    padding: 10px 40px;
+    font-family: "Arial", sans-serif;
+    font-weight: lighter !important;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-top: 45px;
+    letter-spacing: 1px !important;
+}
+
+label{
+    letter-spacing: 1px;
+}
+
+.mine{
+    padding: 30px;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-family: "Arial", sans-serif;
+    font-weight: 300;
+}
+
+input[type="email"],
+input[type="password"] {
+    border: none;
+    border-bottom: 2px solid rgb(181, 181, 181);
+    width: 100%;
+    background-color: transparent;
+    padding: 10px;
+    /* Very light grey border */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-bottom: 2px solid rgb(107, 121, 132);
+    /* Very light grey border */
+}
+
+.signin-button {
+background-image: linear-gradient(to right, rgb(90, 103, 109), rgb(68, 86, 98), rgb(84, 98, 109));
+    /* Dark blue button */
+    color: #fff;
+    /* White text color */
+    padding: 10px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}

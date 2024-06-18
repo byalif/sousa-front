@@ -1,0 +1,139 @@
+.client-inquiries-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    padding: 20px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    position: relative;
+    width: 80%;
+}
+
+input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    color: #666;
+    text-decoration: none;
+}
+
+.search-icon i {
+    font-size: 20px;
+}
+
+.client-inquiries-container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.inquiry {
+    flex: 1;
+    width: 100%;
+    margin-bottom: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inquiry-header h2 {
+    margin: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    /* Add background color */
+    padding: 10px 10px;
+    /* Adjust padding for desired highlight size */
+    border-radius: 5px;
+    /* Add border radius for rounded corners */
+}
+
+.inquiry-header p {
+    margin: 10px 0;
+    /* Increased margin for spacing */
+    font-size: 16px;
+    letter-spacing: 1px;
+    /* Increased font size for readability */
+    font-family: 'Roboto', sans-serif;
+    color: #646f76;
+}
+
+.client-results {
+    border-top: 1px solid rgb(219, 219, 219);
+        border-bottom: 1px solid rgb(236, 236, 236);
+    background-color: #fafafa;
+    max-height: 253px;
+    /* Adjust as needed */
+    padding: 10px;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+}
+
+/* Ensure scrollbar is always visible */
+.client-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+.client-results::-webkit-scrollbar-thumb {
+    background-color: #9f9f9f;
+}
+
+.client-results::-webkit-scrollbar-thumb:hover {
+    background-color: #707070;
+}
+
+.client-results::-webkit-scrollbar-track {
+    background-color: #e6e6e6;
+}
+
+
+
+
+.client-results .result h3 {
+    margin: 15px 0 5px;
+    /* Adjusted margins for spacing */
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.client-results .result p {
+    margin: 5px 0;
+    /* Adjusted margins for spacing */
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #666;
+}
+@media (max-width: 780px) {
+    .client-inquiries-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.date {
+    font-size: 14px !important;
+    color: #a1a1a1 !important;
+    margin-top: 5px;
+}

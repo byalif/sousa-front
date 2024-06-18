@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,400;1,500&display=swap');
+
+h1,
+h2
+{
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+}
+
+.header{
+        background-color: #000;
+}
+
+.header h6{
+        font-weight: bold;
+            text-align: center;
+            font-size: 50px;
+            
+}
+
+:root {
+    --main: #dadada;
+    --black: #000;
+    --white: #fff;
+    --font_family:'Lucida Console',
+        'Consolas',
+        monospace;
+}
+
+
+
+* {
+    transition: 0.3s;
+    font-family: var(--font_family);
+}
+
+*::selection {
+    background: var(--main);
+    color: var(--white) !important;
+}
+
+
+.img img {
+    margin-top: 6px;
+    width: 100%;
+    /* Ensure the image takes up the full width of its container */
+    height: 100%;
+    /* Ensure the image takes up the full height of its container */
+    object-fit: cover;
+    /* Cover the entire container with the image */
+}
+
+.header .content{
+    position: absolute;
+    padding: 25px 15px;
+    top: 80%;
+    color: #ffffff;
+    z-index: 100;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    border-top: solid 2px white; 
+}
+
+.btn{
+
+    width: 300px;
+    border: 2px solid var(--main);
+    color: var(--main) !important;
+    border-radius: 13px;
+    position: relative;
+   z-index: 1;
+   
+}
+
+
+.btn:hover{
+    color: var(--black) !important;
+}
+
+.btn::after {
+    z-index: -1;
+    content: "";
+    background: var(--main);
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 0px;
+    top:0;
+    border-radius: 11px;
+    left:0;
+    transition: 0.3s;
+}
+
+.btn:hover::after{
+    width: 100%;
+}
+
+.header .btn{
+    margin-top: 20px;
+}
+
+.typewriter {
+    overflow: hidden;
+    /* Hide overflow */
+    border-right: .15em solid orange;
+    /* Cursor effect */
+    white-space: nowrap;
+    /* Prevent wrapping */
+    margin: 0 auto;
+    /* Center text */
+    letter-spacing: .15em;
+    /* Space between characters */
+    animation: typing 4s steps(40, end) infinite;
+    /* Typewriter animation */
+}
+
+
+
+
+@keyframes typing {
+    0% {
+        width: 0;
+        /* Start with zero width */
+    }
+
+    50% {
+        width: 100%;
+        /* Complete typing */
+    }
+
+    55%,
+    60%,
+    65% {
+        border-right-color: transparent;
+        /* Hide cursor */
+    }
+
+    70%,
+    75% {
+        border-right-color: orange;
+        /* Blink cursor first time */
+    }
+
+    80%,
+    85% {
+        border-right-color: transparent;
+        /* Hide cursor */
+    }
+
+    90%,
+    95% {
+        border-right-color: orange;
+        /* Blink cursor second time */
+    }
+}

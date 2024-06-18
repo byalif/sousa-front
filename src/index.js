@@ -1,17 +1,66 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useEffect, useState, createContext } from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import "./App.css";
+import prod1 from "./p1.jpeg";
+import prod2 from "./p2.jpeg";
+import prod3 from "./p3.jpeg";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+export const AppContext = createContext();
+
+export const AppProvider = ({ children }) => {
+  const [cart, setCart] = useState(
+    localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
+  );
+  const [isLoading, setIsLoading] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    // Retrieve loggedIn state from local storage
+    const storedLoggedIn = localStorage.getItem("loggedIn");
+    if (storedLoggedIn) {
+      setLoggedIn(JSON.parse(storedLoggedIn));
+    }
+
+    // Retrieve user object from local storage
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  // Function to update the cart
+  const updateCart = (newCart) => {
+    setCart((old) => {
+      setIsLoading(false);
+      return newCart;
+    });
+    localStorage.setItem("cart", JSON.stringify(newCart));
+  };
+
+  return (
+    <AppContext.Provider
+      value={{
+        user,
+        setUser,
+        loggedIn,
+        setLoggedIn,
+        cart,
+        updateCart,
+        isLoading,
+        setIsLoading,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-  <React.StrictMode>
+  <AppProvider>
     <App />
-  </React.StrictMode>
+  </AppProvider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
