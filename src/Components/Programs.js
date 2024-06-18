@@ -14,7 +14,7 @@ const Programs = () => {
   const products = [
     {
       id: "30",
-      img: prod1,
+      img: "https://sousa.s3.amazonaws.com/p1.jpeg",
       name: "30 Day Strength Surge",
       price: 30,
       description:
@@ -22,7 +22,7 @@ const Programs = () => {
     },
     {
       id: "60",
-      img: prod2,
+      img: "https://sousa.s3.amazonaws.com/p2.jpeg",
       name: "8 Week Muscle Mastery",
       price: 60,
       description:
@@ -30,7 +30,7 @@ const Programs = () => {
     },
     {
       id: "90",
-      img: prod3,
+      img: "https://sousa.s3.amazonaws.com/p3.jpeg",
       name: "12 Week Bulk & Sculpt",
       price: 90,
       description:

@@ -44,9 +44,9 @@ const About = () => {
           <p>Welcome aboard, and let's soar to new heights together!</p>
         </div>
         <div className="about-me-images">
-          <img src={im1} alt="Image 1" />
-          <img src={im2} alt="Image 2" />
-          <img src={im3} alt="Image 3" />
+          <img src="https://sousa.s3.amazonaws.com/p1.jpeg" alt="Image 1" />
+          <img src="https://sousa.s3.amazonaws.com/p2.jpeg" alt="Image 2" />
+          <img src="https://sousa.s3.amazonaws.com/p3.jpeg" alt="Image 3" />
         </div>
       </div>
     </div>

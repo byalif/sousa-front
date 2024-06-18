@@ -37,14 +37,17 @@ const Details = () => {
           </div>
           <div className="otherPara col-sm-5">
             {windowWidth > 759 ? (
-              <img style={{ height: "80%" }} src={theimg} />
+              <img
+                style={{ height: "80%" }}
+                src="https://sousa.s3.amazonaws.com/sou16.png"
+              />
             ) : (
               <img
                 style={{
                   height: "60%",
                   marginTop: "60px",
                 }}
-                src={theimg2}
+                src="https://sousa.s3.amazonaws.com/sous11.jpeg"
               />
             )}
           </div>

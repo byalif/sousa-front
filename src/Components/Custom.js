@@ -12,17 +12,29 @@ const Custom = () => {
           <div className="row">
             <div className="col-sm-4">
               <div className="box">
-                <img className="img-fluid" src={Recent1} alt="" />
+                <img
+                  className="img-fluid"
+                  src="https://sousa.s3.amazonaws.com/sous12.jpeg"
+                  alt=""
+                />
               </div>
             </div>
             <div className="col-sm-4">
               <div className="box">
-                <img className="img-fluid" src={Recent2} alt="" />
+                <img
+                  className="img-fluid"
+                  src="https://sousa.s3.amazonaws.com/sous9.jpeg"
+                  alt=""
+                />
               </div>
             </div>
             <div className="col-sm-4">
               <div className="box">
-                <img className="img-fluid" src={Recent3} alt="" />
+                <img
+                  className="img-fluid"
+                  src="https://sousa.s3.amazonaws.com/sous10.jpeg"
+                  alt=""
+                />
               </div>
             </div>
           </div>
