@@ -5,7 +5,8 @@ import { AppContext } from "../index.js"; // Assuming you exported CartContext f
 const Navbar = () => {
   const [defaultWidth, setWidth] = useState(window.innerWidth);
   const [isShaking, setIsShaking] = useState(false);
-  const { cart, updateCart, userRole, isLoggedIn } = useContext(AppContext);
+  const { cart, updateCart, setLoggedIn, userRole, isLoggedIn, user, setUser } =
+    useContext(AppContext);
   const [cartLength, setCartLength] = useState(0);
   const [showMenu1, setShowMenu1] = useState(false);
   const [showMenu2, setShowMenu2] = useState(false);
@@ -14,6 +15,13 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
   const dropdownRef1 = useRef(null);
   const dropdownRef2 = useRef(null);
+
+  useEffect(() => {
+    if (localStorage.getItem("user")) {
+      setUser(JSON.parse(localStorage.getItem("user")));
+      setLoggedIn(true);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,7 +103,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-nav">
-        {!userRole ? (
+        {user?.role?.name === "ADMIN" ? (
           <div className="admin-menu">
             <div className="nav-item-admin dropdown" ref={dropdownRef2}>
               <button className="dropbtn joke" onClick={handleToggleMenu2}>
@@ -144,11 +152,23 @@ const Navbar = () => {
           </div>
         )}
         {isLoggedIn ? (
-          <a href="/about" className="nav-item">
+          <a
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              localStorage.removeItem("user");
+              localStorage.removeItem("jwtToken");
+              setTimeout(() => {
+                window.location = "/";
+              }, 100);
+            }}
+            className="nav-item"
+          >
             Sign out
           </a>
         ) : (
-          <a href="/signin" className="nav-item"></a>
+          <a href="/signin" className="nav-item">
+            Sign in
+          </a>
         )}
         <a href="/checkout" className="nav-item cart-icon">
           <i className="fas fa-shopping-cart"></i>

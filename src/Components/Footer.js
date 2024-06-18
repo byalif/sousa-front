@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
         <div class="copyright">
           <hr style={{ backgroundColor: "white", margin: "20px 0" }} />
-          <p>&copy; 2024 alifthenics. All rights reserved.</p>
+          <p>&copy; 2024 sousaesthetic. All rights reserved.</p>
         </div>
       </footer>
     </>

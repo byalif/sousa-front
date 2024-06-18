@@ -30,9 +30,10 @@ const Signin = () => {
       // Save the token to localStorage
       localStorage.setItem("jwtToken", token);
       console.log(response);
-
+      window.location = "/";
       // Update the user context
       setUser(user);
+      localStorage.setItem("user", JSON.stringify(user));
       setLoggedIn(true);
 
       console.log("Sign-in successful!");

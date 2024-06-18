@@ -13,7 +13,7 @@ export const AppProvider = ({ children }) => {
     localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
   );
   const [isLoading, setIsLoading] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export const AppProvider = ({ children }) => {
       value={{
         user,
         setUser,
-        loggedIn,
+        isLoggedIn,
         setLoggedIn,
         cart,
         updateCart,
