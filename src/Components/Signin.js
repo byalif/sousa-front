@@ -17,7 +17,7 @@ const Signin = () => {
 
     try {
       const response = await axios.post(
-        "http://a6ec00542b65a4179ad8913259a961e3-956403552.us-east-2.elb.amazonaws.com/auth/login",
+        "https://a6ec00542b65a4179ad8913259a961e3-956403552.us-east-2.elb.amazonaws.com/auth/login",
         {
           email: email,
           password: password,

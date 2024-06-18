@@ -11,7 +11,7 @@ const ClientInquiries = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://a6ec00542b65a4179ad8913259a961e3-956403552.us-east-2.elb.amazonaws.com/mail/allResultsGroupedByInquiryId"
+          "https://a6ec00542b65a4179ad8913259a961e3-956403552.us-east-2.elb.amazonaws.com/mail/allResultsGroupedByInquiryId"
         );
         setInquiries(response.data);
         setIsLoading(false);

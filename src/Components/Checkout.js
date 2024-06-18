@@ -34,7 +34,7 @@ const Checkout = () => {
   const initiateCheckout = () => {
     setIsLoading(true); // Simulating API request delay with setTimeout
     fetch(
-      "http://a6ec00542b65a4179ad8913259a961e3-956403552.us-east-2.elb.amazonaws.com/stripe/checkout/hosted",
+      "https://a6ec00542b65a4179ad8913259a961e3-956403552.us-east-2.elb.amazonaws.com/stripe/checkout/hosted",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
