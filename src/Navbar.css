@@ -156,12 +156,16 @@ a{
     flex-direction: row;
 }
 
-@media (max-width: 703px) {
+@media (max-width: 902px) {
     .navbar-nav {
         display: none;
         /* Hide the navbar items */
     }
+              
+
 }
+
+
 
 .nav-item {
     margin: 8px;
@@ -339,3 +343,71 @@ a{
     display: flex;
 }
 
+
+
+
+.burger-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+}
+
+.burger-menu div {
+    z-index: 100;
+    width: 30px;
+    height: 3px;
+    background-color: #ababab;
+    transition: all 0.3s ease;
+}
+
+.burger-menu.open .bar1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.open .bar2 {
+    opacity: 0;
+}
+
+.burger-menu.open .bar3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    margin-top: 154px;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgb(48, 48, 71), rgb(47, 47, 71), rgb(36, 36, 58));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-nav-item {
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+.cart-length2{
+    background-color: #608bba;
+    border-radius: 100px;
+    padding: 3px 10px;
+    margin: 5px;
+    position: relative;
+    top: -10px;
+    left: -15px;
+    z-index: -1;
+}

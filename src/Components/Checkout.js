@@ -53,82 +53,87 @@ const Checkout = () => {
   };
 
   return (
-    <div
-      style={{
-        marginTop: `${cart.length === 0 ? "100px" : "230px"}`,
-        justifyContent: `${cart.length === 0 ? "center" : ""}`,
-        alignItems: `${cart.length === 0 ? "center" : ""}`,
-      }}
-      className="checkout-container"
-    >
-      {cart.length === 0 ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "50vh",
-          }}
-          className="empty-cart-message"
-        >
-          <i className="fas fa-shopping-cart"></i>
-          <p>Cart is empty</p>
+    <>
+      <div
+        style={{
+          marginTop: `${cart.length === 0 ? "100px" : "200px"}`,
+          justifyContent: `${cart.length === 0 ? "center" : ""}`,
+          alignItems: `${cart.length === 0 ? "center" : ""}`,
+        }}
+        className="checkout-container"
+      >
+        <div className="customer-details">
+          <h3>Customer Details</h3>
+
+          <input
+            style={{ width: "100%" }}
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={onNameChange}
+          />
+
+          <input
+            style={{ border: ".1px solid grey" }}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={onEmailChange}
+          />
+
+          {isLoading ? (
+            <div className="loading-animation">Proceeding to checkout...</div>
+          ) : (
+            <button onClick={initiateCheckout} className="checkout-button">
+              Checkout
+            </button>
+          )}
         </div>
-      ) : (
-        <>
-          <div className="products-container">
-            {cart.map((item) => (
-              <div key={item.id} className="product-box">
-                <div
-                  onClick={() => {
-                    deleteItem(item.id);
-                  }}
-                  className="product-delete-icon"
-                >
-                  <i className="fas fa-times"></i>
-                </div>
-
-                <img src={item.img} alt={item.name} className="product-image" />
-
-                <div className="product-details">
-                  <h6 className="product-name">{item.name}</h6>
-
-                  <h5 className="product-price">${item.price}</h5>
-                </div>
-              </div>
-            ))}
+        {cart.length === 0 ? (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "50vh",
+            }}
+            className="empty-cart-message"
+          >
+            <i className="fas fa-shopping-cart"></i>
+            <p>Cart is empty</p>
           </div>
+        ) : (
+          <>
+            <div className="products-container">
+              {cart.map((item) => (
+                <div key={item.id} className="product-box">
+                  <div
+                    onClick={() => {
+                      deleteItem(item.id);
+                    }}
+                    className="product-delete-icon"
+                  >
+                    <i className="fas fa-times"></i>
+                  </div>
 
-          <div className="customer-details">
-            <h3>Customer Details</h3>
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="product-image"
+                  />
 
-            <input
-              style={{ width: "100%" }}
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={onNameChange}
-            />
+                  <div className="product-details">
+                    <h6 className="product-name">{item.name}</h6>
 
-            <input
-              style={{ border: ".1px solid grey" }}
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={onEmailChange}
-            />
-
-            {isLoading ? (
-              <div className="loading-animation">Proceeding to checkout...</div>
-            ) : (
-              <button onClick={initiateCheckout} className="checkout-button">
-                Checkout
-              </button>
-            )}
-          </div>
-        </>
-      )}
-    </div>
+                    <h5 className="product-price">${item.price}</h5>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

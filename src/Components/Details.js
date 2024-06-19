@@ -44,8 +44,12 @@ const Details = () => {
             ) : (
               <img
                 style={{
-                  height: "60%",
+                  width: "100%",
+                  height: "auto",
+                  maxWidth: "100%", // Ensures the image does not exceed the container's width
+                  maxHeight: "100vh", // Ensures the image does not exceed the viewport height
                   marginTop: "60px",
+                  objectFit: "contain", // Ensures the aspect ratio is maintained
                 }}
                 src="https://sousa.s3.amazonaws.com/sous11.jpeg"
               />
