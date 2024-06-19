@@ -381,7 +381,7 @@ a{
     right: -100%;
     margin-top: 154px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: linear-gradient(to right, rgb(48, 48, 71), rgb(47, 47, 71), rgb(36, 36, 58));
     display: flex;
     flex-direction: column;

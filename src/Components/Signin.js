@@ -38,6 +38,7 @@ const Signin = () => {
 
       console.log("Sign-in successful!");
     } catch (err) {
+      console.log(err);
       setError("Invalid email or password");
       console.error("Sign-in error:", err);
     }

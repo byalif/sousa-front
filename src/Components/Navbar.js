@@ -134,19 +134,6 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <div className="nav-item-admin dropdown" ref={dropdownRef1}>
-              <button className="dropbtn joke" onClick={handleToggleMenu1}>
-                Analytics
-                <i className={`fas fa-caret-${showMenu1 ? "up" : "down"}`}></i>
-              </button>
-              {showMenu1 && (
-                <div className="dropdown-content">
-                  <a href="/questions">Profile</a>
-                  <a href="/metrics">Metrics</a>
-                  <a href="/traffic">Traffic</a>
-                </div>
-              )}
-            </div>
           </div>
         ) : (
           <div style={{ display: "flex" }}>
@@ -208,7 +195,7 @@ const Navbar = () => {
             setBurgerOpen(!burgerOpen);
             nav("/about");
           }}
-          style={{ cursor: "pointer", marginTop: "-200px" }}
+          style={{ cursor: "pointer", marginTop: "-80px" }}
           className="mobile-nav-item"
         >
           About
@@ -239,6 +226,44 @@ const Navbar = () => {
           <a href="/products" className="mobile-nav-item">
             Products
           </a>
+        )}
+        {user?.role?.name === "ADMIN" && (
+          <>
+            <a
+              onClick={() => {
+                window.scrollTo(0, 0);
+                setBurgerOpen(!burgerOpen);
+                nav("/inquiries");
+              }}
+              style={{ cursor: "pointer" }}
+              className="mobile-nav-item"
+            >
+              Inquiries
+            </a>
+            <a
+              onClick={() => {
+                window.scrollTo(0, 0);
+                setBurgerOpen(!burgerOpen);
+                nav("/invoices");
+              }}
+              style={{ cursor: "pointer" }}
+              className="mobile-nav-item"
+            >
+              Invoices
+            </a>
+
+            <a
+              onClick={() => {
+                window.scrollTo(0, 0);
+                setBurgerOpen(!burgerOpen);
+                nav("/questions");
+              }}
+              style={{ cursor: "pointer" }}
+              className="mobile-nav-item"
+            >
+              Questions
+            </a>
+          </>
         )}
         {isLoggedIn ? (
           <a
