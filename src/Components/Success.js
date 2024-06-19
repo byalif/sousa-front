@@ -16,7 +16,7 @@ function Success() {
   useEffect(() => {
     if (token && email && sessionId) {
       fetch(
-        `https://a6ec00542b65a4179ad8913259a961e3-956403552.us-east-2.elb.amazonaws.com/stripe/sendEmail?sessionId=${sessionId}`,
+        `https://sousa.beatsbyalif.com/stripe/sendEmail?sessionId=${sessionId}`,
         {
           method: "POST",
           headers: {

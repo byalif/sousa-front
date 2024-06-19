@@ -21,19 +21,15 @@ function CustomerDetails(props) {
       customerEmail: email,
     });
     console.log(obj);
-    fetch(
-      "https://a6ec00542b65a4179ad8913259a961e3-956403552.us-east-2.elb.amazonaws.com/stripe/" +
-        props.endpoint,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: props.data.map((elem) => ({ name: elem.name, id: elem.id })),
-          customerName: name,
-          customerEmail: email,
-        }),
-      }
-    )
+    fetch("https://sousa.beatsbyalif.com/stripe/" + props.endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        items: props.data.map((elem) => ({ name: elem.name, id: elem.id })),
+        customerName: name,
+        customerEmail: email,
+      }),
+    })
       .then((r) => r.text())
       .then((r) => {
         setIsLoading(false);

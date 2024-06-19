@@ -74,7 +74,7 @@ const AdminPanel = () => {
     console.log(questions);
     axios
       .post(
-        "http://a6ec00542b65a4179ad8913259a961e3-956403552.us-east-2.elb.amazonaws.com/question/create/newQuiz",
+        "https://sousa.beatsbyalif.com/question/create/newQuiz",
         {
           questions: questions,
         },
